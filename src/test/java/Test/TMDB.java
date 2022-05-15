@@ -7,6 +7,7 @@ import Request.PostRequest;
 import org.testng.annotations.Test;
 
 public class TMDB {
+    int list_id=8202673;
     @Test
     public void RequestToken(){
         GetRequest getRequests = new GetRequest();
@@ -47,24 +48,24 @@ public class TMDB {
     @Test
     public void AddMovietoList(){
         PostRequest postRequest = new PostRequest();
-        postRequest.AddMovie(8202666,453395);
+        postRequest.AddMovie(list_id,453395);
     }
 
     @Test
     public void GetListStatus(){
         GetRequest getRequests = new GetRequest();
-        getRequests.getList(8202666);
+        getRequests.getList(list_id);
     }
 
     @Test
     public void GetItemStatus(){ //NOT WORKING :c
         GetRequest getRequests = new GetRequest();
-        getRequests.getItemStatus(8202666,1);
+        getRequests.getItemStatus(list_id,1);
     }
     @Test
     public void DeleteList(){
         DeleteRequest deleteRequest = new DeleteRequest();
-        deleteRequest.deleteList(8202452); //52-63
+        deleteRequest.deleteList(list_id); //52-63
     }
 
 
